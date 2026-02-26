@@ -1,16 +1,18 @@
-# 🇪🇨 [ON HOLD] Ecuador GADs: Financial Dependency & The 70/30 Rule
-> **Status:** Project temporarily suspended due to lack of Open Data transparency.
+# 📦 Olist Supply Chain Analytics: E-commerce Logistics Optimization
+> **An End-to-End Data Engineering and Business Intelligence Project**
 
 ## 📌 Project Overview
-The objective of this Business Intelligence project was to build an automated dashboard tracking the financial execution of Ecuador's Decentralized Autonomous Governments (GADs). Specifically, it aimed to analyze the impact of the newly approved "70/30 Fiscal Rule" (which forces municipalities to allocate 70% of their budget to hard infrastructure and limits current expenditure to 30%).
+In the highly competitive e-commerce sector, last-mile delivery and supply chain efficiency are the primary drivers of customer retention. Late deliveries directly correlate with negative reviews, increased return rates, and revenue loss.
 
-The goal was to measure the "Social Gap": quantifying how many social programs (childcare, health, entrepreneurship) classified as "current expenditure" were at risk of being defunded or eliminated to comply with the law.
+This project analyzes a real-world, highly relational database of ~100k orders from **Olist**, the largest department store in Brazilian marketplaces. By processing 9 interconnected datasets (orders, customers, payments, reviews, and geolocation), this project builds a robust **Star Schema** data model to uncover logistical bottlenecks.
 
-## 🛑 Why is this project on Stand-by?
-As an analyst, data integrity and availability are non-negotiable. 
+## 🎯 Business Objectives
+- **Data Engineering:** Perform ETL processes on multiple raw CSV files to handle missing values, standardize timestamps, and build a relational model.
+- **Logistics Performance:** Measure the "On-Time Delivery Rate" and calculate the average delay (in days) using advanced DAX Time Intelligence.
+- **Geospatial Analysis:** Identify the specific Brazilian states and freight routes that cause the most severe logistical bottlenecks.
+- **Root Cause Analysis:** Correlate delivery delays with customer review scores to quantify the business impact of logistical failures.
 
-Following the approval of the law, the official Open Data portals from the Ministry of Economy and Finance (MEF) and the Central Bank of Ecuador (BCE) became completely unavailable, or the specific granular datasets regarding local government budget execution were removed. 
-
-**Analytical Decision:** Instead of building a simulated ETL pipeline using mock data, this project is on hold. Building a robust data model requires understanding the actual variables, potential proxies, and structural schema provided by the official source. Without transparent data, accurate economic modeling is impossible. 
-
-Once the Ecuadorian government restores transparency to its financial portals and the data becomes public again, this repository will be updated with the full SQL scripts and Power BI models.
+## 🛠️ Tech Stack
+* **Data Transformation (ETL):** SQL / Power Query
+* **Data Modeling:** Power BI (Star Schema / Dimensional Modeling)
+* **Analytics:** DAX (Data Analysis Expressions)
