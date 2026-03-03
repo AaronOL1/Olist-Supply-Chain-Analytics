@@ -26,7 +26,6 @@ SELECT
 FROM olist_orders_dataset o
 JOIN olist_order_items_dataset i ON o.order_id = i.order_id
 WHERE o.order_status = 'delivered'
-);
 
 -- INSIGHT: Delivered orders generated a total revenue of ~13.22M, with an average item price of ~119.98.
 
@@ -98,9 +97,7 @@ GROUP BY
     CASE 
         WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 'Late Delivery'
         ELSE 'On Time Delivery'
- 
+ END; 
 
  -- INSIGHT: Logistics directly impact brand reputation. On-time deliveries average an excellent 4.29 stars, 
  -- while late deliveries plummet to a poor 2.57 stars.
-
- END;
