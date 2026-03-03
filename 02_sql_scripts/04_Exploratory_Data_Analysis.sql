@@ -81,3 +81,26 @@ ORDER BY
 -- while SP pays the lowest (15.15). The logistics strategy must differ by region.
 
 -- 6. Impact of late deliveries on review scores
+SELECT 
+    CASE 
+        WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 'Late Delivery'
+        ELSE 'On Time Delivery'
+    END AS delivery_performance,
+    ROUND(AVG(CAST(r.review_score AS FLOAT)), 2) AS avg_review_score,
+    COUNT(o.order_id) AS total_reviews
+FROM 
+    olist_orders_dataset o
+JOIN 
+    olist_order_reviews_dataset r ON o.order_id = r.order_id
+WHERE 
+    o.order_status = 'delivered'
+GROUP BY 
+    CASE 
+        WHEN o.order_delivered_customer_date > o.order_estimated_delivery_date THEN 'Late Delivery'
+        ELSE 'On Time Delivery'
+ 
+
+ -- INSIGHT: Logistics directly impact brand reputation. On-time deliveries average an excellent 4.29 stars, 
+ -- while late deliveries plummet to a poor 2.57 stars.
+
+ END;
